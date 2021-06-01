@@ -1,0 +1,74 @@
+            //procedure
+PROCEDURE dot_prod(v1,v2: array of INTEGER ;dot :INTEGER)
+VAR
+   i,n,m: INTEGER
+BEGIN
+    n:=v1.length-1
+    m:=v2.length-1
+    IF (n<>m) THEN
+write('vectors doesn't have the same length')
+    ELSE
+ FOR i FROM 0 TO n STEP 1  DO
+ dot:=dot+v1[i]*v2[i]
+    
+ END_FOR
+    write ("dot product of" ,v1,v2 "egale",dot)
+    END_IF
+END
+ALGORITHM orth
+VAR
+    vv1,vv2 : array of array
+    i,j:INTEGER
+    t,w:INTEGER
+    ps:INTEGER:=0
+    t:vv1.length-1
+    w:vv2.length-1
+BEGIN
+FOR i FROM 0 TO t STEP 1  DO
+ FOR j FROM 0 TO w STEP   DO
+  doc_prod(vv1[i],vv2[j], ps)
+  IF (ps==0) THEN
+      write (vv1[i],vv2[j],'sont orthogonaux')
+  END_IF
+ END_FOR
+END_FOR
+END
+
+
+
+
+
+           //function
+FUNCTION dot_prod(v1,v2:array of INTEGER) :INTEGER
+VAR
+    dot,i,n,m :INTEGER
+BEGIN
+    n:=v1.length-1
+    m:=v2.length-1
+  IF (n<>m) THEN
+write('vectors doesn't have the same length')
+  ELSE
+  FOR i FROM 0 TO  STEP step  DO
+      dot:=dot+v1[i]*v2[i]
+  END_FOR
+  write("dot product of",v1,v2 "est egale", dot)
+  END IF
+    RETURN dot ;
+END     
+ALGORITHM orth
+VAR
+    vv1,vv2: array of array
+    i,j,t,w: INTEGER
+    t:=vv1.length-1
+    w:=vv2.lenght-1
+    ps:=0
+BEGIN
+    FOR i FROM 0 TO t STEP 1  DO
+     FOR i FROM 0 TO w STEP 1  DO
+         ps:=dot_prod.(vv1[i],vv2[j])
+         IF (ps:==0) THEN
+             write(vv1[i],vv2[j] "sont orthogonaux")
+         END_IF
+     END_FOR
+    END_FOR
+END      
